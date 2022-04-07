@@ -1,0 +1,29 @@
+.blog-card{
+    display: flex;
+    flex-direction: column ;
+    justify-content: flex-start;
+    width: 10rem;
+    height: 18rem;
+}
+.blog-card img{
+  width: inherit;
+  height: 6rem;
+  border-radius: 5%;
+  cursor: pointer;
+}
+.blog-card p{
+    margin: 0.5rem 0;
+    
+}
+.blog-date{
+    font-size: x-small;
+}
+.blog-title{
+    font-weight: bold;
+    cursor: pointer;
+    word-wrap: break-word;
+}
+.blog-desc{
+    font-size: small;
+    word-wrap: break-word;
+}
