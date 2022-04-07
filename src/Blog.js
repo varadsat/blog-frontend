@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import './Home.css';
 import './BlogGrid.css';
-import { API_URL } from "./AppData";
+import { API_URL } from "./appData";
 const Blog  = () =>{
     const params = useParams();
     const [blog,setBlog] = useState(null);       

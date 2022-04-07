@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./Home.css";
 import BlogGrid from "./BlogGrid";
 import { Link } from "react-router-dom";
-import { API_URL } from "./AppData";
+import { API_URL } from "./appData";
 function Home() {
   const [blogs,setBlogs] = useState([]);
   useEffect(()=>{

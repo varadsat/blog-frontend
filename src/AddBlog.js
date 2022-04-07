@@ -3,7 +3,7 @@ import "./AddBlog.css";
 import { useState } from "react";
 import { RichTextEditor } from "@mantine/rte";
 import { useNavigate } from "react-router-dom";
-import { API_URL } from "./AppData";
+import { API_URL } from "./appData";
 const initialValue = "<p>Your Blog Goes Here...</p>";
 const emptyValue = "<p><br></p>";
 const authorDetails = {
