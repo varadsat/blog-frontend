@@ -4,7 +4,7 @@ import { useState } from "react";
 import { RichTextEditor } from "@mantine/rte";
 import { useNavigate } from "react-router-dom";
 import { API_URL } from "./appData";
-const initialValue = "<p>Your Blog Goes Here...</p>";
+const placeHolder = "<p>Your Blog Goes Here...</p>";
 const emptyValue = "<p><br></p>";
 const authorDetails = {
   name: "Varad",
@@ -14,12 +14,13 @@ const addBlogUrl = API_URL+"/addblog";
 const AddBlog = (props) => {
   const [title, setTitle] = useState("");
   const [tags, setTags] = useState([]);
-  const [bodyValue, onChange] = useState(initialValue);
+  const [bodyValue, onChange] = useState("");
+  const [submitting, setSubmitting] = useState(false); 
   const navigate = useNavigate();
   const submitHandler = async () => {
+    setSubmitting(true);
     if (
       title === "" ||
-      bodyValue === initialValue ||
       bodyValue === emptyValue
     ) {
       return;
@@ -42,6 +43,8 @@ const AddBlog = (props) => {
       navigate("/");
     } catch (error) {
       console.log("Could not add a blog" + error);
+    } finally {
+      setSubmitting(false);
     }
   };
   const tagsChangeHandler = (tags) => {
@@ -72,8 +75,9 @@ const AddBlog = (props) => {
           value={bodyValue}
           onChange={onChange}
           style={{ width: "80%" }}
+          placeholder={placeHolder}
         />
-        <button onClick={submitHandler}>Submit</button>
+        <button disabled={submitting} onClick={submitHandler}>Submit</button>
       </div>
     </div>
   );
