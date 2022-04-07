@@ -1,6 +1,6 @@
 import './BlogCard.css'
 import dateFormat from 'dateformat';
-import { Link, Outlet } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 const BlogCard = ({blog}) =>{
     const date = dateFormat(Date.parse(blog.publishedAt), "mmmm dS, yyyy");
     const body = blog.body.length>100? blog.body.substring(0,100)+"..." : blog.body.substring(0,100);
