@@ -2,7 +2,6 @@ import { Route, Routes } from "react-router-dom";
 import AddBlog from "./AddBlog";
 import "./App.css";
 import Blog from "./Blog";
-
 import Home from "./Home";
 const App = () => {
   return (
@@ -13,5 +12,4 @@ const App = () => {
     </Routes>
   );
 };
-
 export default App;

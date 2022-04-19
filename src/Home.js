@@ -4,7 +4,7 @@ import BlogGrid from "./BlogGrid";
 import { Link } from "react-router-dom";
 import { API_URL } from "./appData";
 function Home() {
-  const [blogs,setBlogs] = useState([]);
+  const [blogs,setBlogs] = useState(null);
   useEffect(()=>{
     const fillBlogs = async() =>{
       try {
